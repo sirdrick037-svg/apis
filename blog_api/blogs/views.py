@@ -6,13 +6,21 @@ from rest_framework import viewsets, filters
 # from django.db import IntegrityError
 from .models import Blog, Author
 from .serializers import BlogSerializer, AuthorSerializer
-
+from drf_spectacular.utils import extend_schema
 class AuthorViewSet(viewsets.ModelViewSet):
     """""
     A viewset that returns all the authors
     """""
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
+
+    @extend_schema(
+        summary="Retrieve all users",
+        description="This endpoint returns all active users in the system.",
+        responses=AuthorSerializer(many=True)
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
 
 class BlogViewSet(viewsets.ModelViewSet):
 

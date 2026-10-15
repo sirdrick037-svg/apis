@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogs',
     'rest_framework',
-    'school'
+    'school',
+    'drf_spectacular',
+    'accounts',
+    'rest_frameworks_simplejwt',
+     'rest_frameworks_simplejwt.token_blacklist'
 ]
 
 MIDDLEWARE = [
@@ -83,10 +87,22 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'accounts.user'
+
+
 REST_FRAMEWORK = {  
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 
 
 # Password validation
