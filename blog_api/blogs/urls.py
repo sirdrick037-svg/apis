@@ -12,8 +12,10 @@ urlpatterns = [
 #     path('blogs/', BlogListCreateAPIView.as_view(), name='blog-list-create'),
 #     path('blogs/<int:pk>/', BlogDetailAPIView.as_view(), name='blog-detail'),
 #     path('authors/', AuthorListAPIView.as_view(), name='author-list'),
-      path('', include(router.urls)),
-      path('schema/', SpectacularAPIView.as_view(), name='schema'),
-      path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-      path('schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    #   path('', include(router.urls)),
+    #   path('schema/', SpectacularAPIView.as_view(), name='schema'),
+    #   path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    #   path('schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
+      path('v1/', include(router.urls))
 ]    

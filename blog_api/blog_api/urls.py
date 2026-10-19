@@ -20,8 +20,8 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('v1/api/', include('blogs.urls')),
+    path('api/', include('accounts.urls')),
+    path('api/', include('blogs.urls')),
     path('api/', include('school.urls')),
-    
-
+    path('api/', include('mpesa.urls')),    
 ]
