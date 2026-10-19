@@ -4,6 +4,7 @@ from rest_framework import viewsets, filters
 # from rest_framework.response import Response
 # from rest_framework import status, exceptions
 # from django.db import IntegrityError
+from rest_framework import AllowAny
 from .models import Blog, Author
 from .serializers import BlogSerializer, AuthorSerializer
 from drf_spectacular.utils import extend_schema
